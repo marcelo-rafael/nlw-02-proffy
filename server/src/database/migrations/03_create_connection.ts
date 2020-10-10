@@ -5,10 +5,10 @@ export async function up(knex: Knex) {
     table.increments('id').primary();
 
     table
-      .integer('class_id')
+      .integer('user_id')
       .notNullable()
       .references('id')
-      .inTable('classes')
+      .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
 
